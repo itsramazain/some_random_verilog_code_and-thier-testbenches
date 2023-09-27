@@ -1,0 +1,51 @@
+
+module s7segment_4bit_hexa_display(num,sig);
+
+	input [3:0]num;
+	output reg[6:0]sig;
+	
+	
+	always@(num)
+	case(num)
+		
+  /*
+		0
+   -------|
+  |       |
+  | 1     |5
+  |     6 |
+  ---------
+  |       |
+  | 2     |4
+  |     3 |
+  ---------
+  
+  */
+
+	4'h0:sig=7'b1111110;
+	4'h1:sig=7'b0000110;
+	4'h2:sig=7'b1011011;
+	4'h3:sig=7'b1001111;
+	4'h4:sig=7'b0100111;
+	4'h5:sig=7'b1101101;
+	4'h6:sig=7'b1111101;
+	4'h7:sig=7'b1000111;
+	4'h8:sig=7'b1111111;
+	4'h9:sig=7'b1101111;
+	4'ha:sig=7'b1110110;
+	4'hb:sig=7'b0111101;
+	4'hc:sig=7'b1111000;
+	4'hd:sig=7'b0011111;
+	4'he:sig=7'b1111001;
+	4'hf:sig=7'b1110001;
+	
+	
+	
+	
+	
+	endcase
+	
+	
+	
+endmodule	
+	
