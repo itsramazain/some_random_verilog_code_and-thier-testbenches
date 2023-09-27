@@ -1,0 +1,71 @@
+`timescale 1ns / 1ps
+module test_bench();
+	reg [3:0]x,y;
+	reg s;
+	wire [3:0]m;
+	mux DUT(x,y,m,s);
+	
+	
+	initial
+	begin
+	x=4'b0000;y=4'b0000;s=0;
+	end
+
+	
+	initial
+	begin
+	#1; x=4'd0;y=4'd0;s=1;
+	#1; x=4'd0;y=4'd1;s=0;
+	#1; x=4'd0;y=4'd1;s=1;
+	#1; x=4'd0;y=4'd2;s=0;
+	#1; x=4'd0;y=4'd2;s=1;
+	#1; x=4'd0;y=4'd3;s=0;
+	#1; x=4'd0;y=4'd3;s=1;
+	
+	#1; x=4'd1;y=4'd0;s=0;
+	#1; x=4'd1;y=4'd0;s=1;
+	#1; x=4'd1;y=4'd1;s=0;
+	#1; x=4'd1;y=4'd1;s=1;
+	#1; x=4'd1;y=4'd2;s=0;
+	#1; x=4'd1;y=4'd2;s=1;
+	#1; x=4'd1;y=4'd3;s=0;
+	#1; x=4'd1;y=4'd3;s=1;
+	
+	#1; x=4'd2;y=4'd0;s=0;
+	#1; x=4'd2;y=4'd0;s=1;
+	#1; x=4'd2;y=4'd1;s=0;
+	#1; x=4'd2;y=4'd1;s=1;
+	#1; x=4'd2;y=4'd2;s=0;
+	#1; x=4'd2;y=4'd2;s=1;
+	#1; x=4'd2;y=4'd3;s=0;
+	#1; x=4'd2;y=4'd3;s=1;
+	
+	#1; x=4'd3;y=4'd0;s=0;
+	#1; x=4'd3;y=4'd0;s=1;
+	#1; x=4'd3;y=4'd1;s=0;
+	#1; x=4'd3;y=4'd1;s=1;
+	#1; x=4'd3;y=4'd2;s=0;
+	#1; x=4'd3;y=4'd2;s=1;
+	#1; x=4'd3;y=4'd3;s=0;
+	#1; x=4'd3;y=4'd3;s=1;
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
