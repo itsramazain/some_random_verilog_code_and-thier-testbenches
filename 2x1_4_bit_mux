@@ -1,0 +1,14 @@
+module mux(x,y,m,s);
+	output reg[3:0]m;
+	input [3:0]x,y;
+	input s;
+	
+	always @(x,y,s)
+	if (s)
+		m=y;
+	else 
+		m=x;
+	
+endmodule
+	
+	
