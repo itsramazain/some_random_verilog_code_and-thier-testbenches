@@ -1,0 +1,90 @@
+`timescale 1ns / 1ps
+module test_bench();
+	reg [1:0]u,v,w,x;
+	reg [1:0]s;
+	wire [1:0]m;
+	mux DUT(u,v,w,x,s,m);
+	
+	
+	initial
+	begin
+	u=2'd0 ;v=2'd0;w=2'd0;x=2'd0;s=2'd0;
+	end
+
+	
+	initial
+	begin
+	
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd0;s=2'd1;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd0;s=2'd2;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd0;s=2'd3;
+	
+	
+	
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd1;s=2'd0;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd1;s=2'd1;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd1;s=2'd2;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd1;s=2'd3;
+	
+	
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd2;s=2'd0;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd2;s=2'd1;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd2;s=2'd2;
+	#1;u=2'd0 ;v=2'd0;w=2'd0;x=2'd2;s=2'd3;
+	
+	#10;u=2'd0 ;v=2'd0;w=2'd0;x=2'd3;s=2'd0;
+	#10;u=2'd0 ;v=2'd0;w=2'd0;x=2'd3;s=2'd1;
+	#10;u=2'd0 ;v=2'd0;w=2'd0;x=2'd3;s=2'd2;
+	#10;u=2'd0 ;v=2'd0;w=2'd0;x=2'd3;s=2'd3;
+	
+	
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd0;s=2'd0;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd0;s=2'd1;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd0;s=2'd2;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd0;s=2'd3;
+	
+
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd1;s=2'd0;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd1;s=2'd1;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd1;s=2'd2;
+	#10;u=2'd0 ;v=2'd0;w=2'd1;x=2'd1;s=2'd3;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	initial
+	begin
+	
+	end
+endmodule
