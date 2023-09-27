@@ -1,0 +1,14 @@
+module mux(u,v,w,x,s,m);
+		input [1:0]s,u,v,w,x;
+		output reg [1:0]m;
+		
+		always@(u,v,w,x,s)
+		case(s)
+		
+		2'b00:m=u;
+		2'b01:m=v;
+		2'b10:m=w;
+		2'b11:m=x;
+		
+		endcase
+endmodule
