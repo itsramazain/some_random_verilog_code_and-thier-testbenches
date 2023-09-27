@@ -1,0 +1,68 @@
+`timescale 1ns / 1ns
+module test_bench();
+	reg [3:0]num;
+	wire [6:0] sig;
+	s7segment_4bit_hexa_display DUT(num,sig);
+	
+	
+	initial
+	begin
+	num=4'h0;
+	end
+
+	
+	
+	
+	initial
+	begin
+	
+	
+	
+	
+	
+		#10;num=4'h1;
+	#1;num=4'h2;
+	#1;num=4'h3;
+	#1;num=4'h4;
+	#1;num=4'h5;
+	#1;num=4'h6;
+	#1;num=4'h7;
+	#1;num=4'h8;
+	#1;num=4'h9;
+	#1;num=4'ha;
+	#1;num=4'hb;
+	#1;num=4'hc;
+	#1;num=4'hd;
+	#1;num=4'he;
+	#1;num=4'hf;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	
+	
+	
+	
+endmodule
