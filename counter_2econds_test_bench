@@ -7,12 +7,12 @@
 module test();
 	reg CLOCK_50,rest;
 	wire [3:0]count;
-	counter(CLOCK_50,rest,count);
+	counter co(CLOCK_50,rest,count);
 	parameter CLOCK_PERIOD=2;
 	
 	initial
 	begin
-	rest=0;
+	rest=1;
 	end
 	
 	
@@ -31,7 +31,7 @@ module test();
 	initial
 	begin
 	
-	#2;rest=1;
+	
 	#11;rest=0;
 	
 	
