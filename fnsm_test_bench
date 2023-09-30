@@ -1,0 +1,77 @@
+// Code your testbench here
+// or browse Examples
+// Code your testbench here
+// or browse Examples
+// Code your design here
+`timescale 1ns / 1ns
+module test();
+	reg CLOCK_50;
+	reg x;
+	wire [1:0]state;
+	wire y;
+	parameter CLOCK_PERIOD = 2;
+	fsm n1(CLOCK_50,x,y,state);
+	
+
+	initial begin
+			CLOCK_50 <= 1'b0;
+		end // initial
+		always @ (*)
+		begin : Clock_Generator
+			#((CLOCK_PERIOD) / 2) 
+			CLOCK_50 <= ~CLOCK_50;
+		end
+	
+	
+	initial
+	begin
+	x=1;
+	end
+	
+	
+
+	
+	
+	
+	initial
+	begin
+	
+	
+	#2;x=0;
+	#2;x=1;
+	#2;x=0;
+	#2;x=0;
+	#2;x=1;
+	#2;x=0;
+	#2;x=1;
+	#2;x=0;
+	#2;x=1;#2;x=0;
+	#2;x=1;#2;x=0;
+	#2;x=1;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	end
+	
+	
+	
+	initial
+	begin
+	#1000 $stop;
+	end
+	initial
+  begin
+    $dumpfile("dump.vcd");
+    $dumpvars(1);
+  end
+	
+	
+
+endmodule
