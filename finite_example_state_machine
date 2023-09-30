@@ -1,0 +1,70 @@
+module fsm(clk,x,y,state);
+		input x,clk;
+		output reg y;
+		output reg [1:0]state /* synthesis keep */;
+		
+		initial
+		begin
+		state=2'd0;
+		end
+		
+		
+		
+		always@(posedge clk)
+		
+		case(state)
+			2'd0:
+			begin
+				if (x)
+					begin
+					state<=2'd0;
+					y<=0;
+					end
+				else
+				begin
+				state<=2'd1;
+					y<=0;
+				end
+			end
+			
+			2'd1:
+			begin
+			if (x)
+			begin
+				state<=2'd2;
+				y<=0;
+			end
+			else
+			begin
+			state<=2'd1;
+				y<=0;
+			end
+			end
+			2'd2:
+			begin	
+			if (x)
+			begin
+				state<=2'd3;
+				y<=0;
+			end
+			else
+			begin
+			state<=2'd1;
+				y<=0;
+			end
+			end
+			2'd3:
+			begin	
+			if (x)
+			begin
+				state<=2'd0;
+				y<=1;
+			end
+			else
+			begin
+			state<=2'd1;
+				y<=1;
+			end
+			end
+	endcase
+endmodule
