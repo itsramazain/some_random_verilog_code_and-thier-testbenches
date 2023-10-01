@@ -1,0 +1,62 @@
+//write first then read ram;
+
+module memory_ram_dual_port(clk,wirte_a,read_a,read_b,write_b,data_in_a,data_in_b,addr_a,addr_b,data_out_a,data_out_b);
+	input clk,wirte_a,write_b,read_a,read_b;
+	input [4:0]addr_a,addr_b;
+	input [3:0]data_in_a,data_in_b;
+	
+	output reg [3:0]data_out_a,data_out_b;
+	reg [3:0]ram[31:0];
+	
+	always@(posedge clk)
+	begin
+	begin
+		case({wirte_a,read_a})
+			2'b00:data_out_a<=32'bx;
+			2'b01:data_out_a<=ram[addr_a];
+			2'b10:
+			begin
+				data_out_a<=32'bx;
+				ram[addr_a]<=data_in_a;
+			end
+			2'b11:
+			begin
+				data_out_a<=data_in_a;
+				ram[addr_a]<=data_in_a;
+
+			end
+		endcase
+	end
+		
+		
+		
+	
+	
+	
+	
+	
+	
+	
+	begin
+			case({write_b,read_b})
+				2'b00:data_out_b<=32'bx;
+				2'b01:data_out_b<=ram[addr_b];
+				2'b10:
+				begin
+					data_out_b<=32'bx;
+					ram[addr_b]=data_in_b;
+				end
+				2'b11:
+				begin
+					data_out_b=data_in_b;
+					ram[addr_b]=data_in_b;
+				end
+		
+		endcase
+		
+		
+		
+	end
+	end
+	
+endmodule
